@@ -14,14 +14,18 @@ require_once "config.php";
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
 </head>
 <body>
-<?php include_once "page_header.php";?>
+<?php require_once "page_header.php";?>
 
-<div class='container-lg text-center'>
+welcome nick name, or full name
+<br>
+User details:
+ f_name // n_name // user_name // phone // email // address
 
-    <h1>Landing</h1>
-    <p>Just talking about University Registration</p>
-</div>
+<br>
+enrolled widget
 
-<?php include_once "page_footer.php";?>
+<br>
+waitlist widget
 
-</body>
+ <?php   require_once "page_footer.php" ?>
+

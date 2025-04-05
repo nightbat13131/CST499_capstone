@@ -18,7 +18,7 @@ header("Location: ".LANDING_PAGE); exit;
 </head>
 <body>
 
-<?php require "page_header.php";?>
+<?php include_once "page_header.php";?>
 
 <div class='container-lg text-center'>
 <h1>Index</h1>
@@ -27,7 +27,7 @@ header("Location: ".LANDING_PAGE); exit;
 
 </div>
 
-<?php require_once "page_footer.php";?>
+<?php include_once "page_footer.php";?>
 
 </body>
 

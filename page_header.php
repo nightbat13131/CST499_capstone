@@ -1,10 +1,10 @@
 ﻿<?php
 error_reporting(E_ALL ^ E_NOTICE);
 require_once "config.php";
-function nav_element(string $url, bool $is_current = false) : string {
+function nav_element(string $url,string $name, bool $is_current = false) : string {
     $active = "";
-    if ($is_current) {$active= "active";};
-    return "<a class='nav-item $active href='".$url."'>Navbar</a>";
+    if ($is_current) {$active= "-active";};
+    return "<a class='nav-item$active' href='$url'>$name</a>";
 }
 
 ?>
@@ -27,24 +27,18 @@ function nav_element(string $url, bool $is_current = false) : string {
         <p>Branding</p>
     </div>
 
-    <div class='navbar navbar-expand-xl bg-primary'>
+    <div class='navbar navbar-expand-xl'>
         <div class="container-fluid">
-            <?php echo nav_element(LANDING_PAGE, true)?>
-            <?php echo nav_element(LANDING_PAGE)?>
-            <?php echo nav_element(LANDING_PAGE)?>
-            <?php echo nav_element(LANDING_PAGE)?>
-            <?php echo nav_element(LANDING_PAGE)?>
-            <?php echo nav_element(LANDING_PAGE)?>
+            <?php echo nav_element(LANDING_PAGE, 'Home', true)?>
+            <?php echo nav_element(LANDING_PAGE, 'Enrollment')?>
+            <?php echo nav_element(ACCOUNT_REGISTRATION_PAGE, 'Register')?>
+            <?php echo nav_element(LOGIN_PAGE, 'Login')?>
+            <?php echo nav_element(USER_ACCOUNT_PAGE, 'Account')?>
+            <?php echo nav_element(LANDING_PAGE, 'Logout')?>
 
         </div>
     </div>
 
 </div>
-
-
-
-
-
-
 
 </body>

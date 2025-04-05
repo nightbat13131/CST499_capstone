@@ -18,8 +18,12 @@ require_once "config.php";
 
 <div class='container-lg text-center'>
 
-    <h1>Landing</h1>
-    <p>Just talking about University Registration</p>
+    <h1>Login</h1>
+    username
+
+    password
+
+    submit
 </div>
 
 <?php include_once "page_footer.php";?>
