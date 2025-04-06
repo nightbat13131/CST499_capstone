@@ -1,5 +1,5 @@
 ﻿<?php
-const IS_DEBUG = true;
+const IS_DEBUG = false;
 
 const ACCOUNT_REGISTRATION_PAGE = "account_registration.php";
 const LANDING_PAGE = "landing_page.php";

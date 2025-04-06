@@ -16,9 +16,7 @@ private ?PDOStatement $_last_prepared = null;
 
     }
 
-    public static function add_user(array $params) {
 
-    }
 
     public function prepare(string $statement): array
     {
@@ -37,6 +35,9 @@ private ?PDOStatement $_last_prepared = null;
         return $results;
     }
 
+    public function get_last_results(): array{
+        return $this->_last_prepared->fetchAll();
+    }
     public function add_entry(string $table, array $params) : array {
         if (IS_DEBUG) {echo "DatabaseUtility::add_entry table: $table, params: "; var_dump($params); echo "<br>";}
         $results = [0, "unknown"];

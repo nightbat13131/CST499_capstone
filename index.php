@@ -1,6 +1,7 @@
 ﻿<?php
 error_reporting(E_ALL ^ E_NOTICE);
 require_once "config.php";
+
 header("Location: ".LANDING_PAGE); exit;
 
 
