@@ -1,6 +1,10 @@
 ﻿<?php
 error_reporting(E_ALL ^ E_NOTICE);
 require_once "config.php";
+require_once "page_header.php";
+// $user defined in page_header
+if (!isset($user)) {$user = UserEntity::get_default_user();}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +18,7 @@ require_once "config.php";
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
 </head>
 <body>
-<?php include_once "page_header.php";?>
+
 
 <div class='container-lg text-center'>
 

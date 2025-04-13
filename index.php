@@ -1,8 +1,9 @@
 ﻿<?php
-error_reporting(E_ALL ^ E_NOTICE);
+    error_reporting(E_ALL ^ E_NOTICE);
 require_once "config.php";
+require_once "utilities.php";
 
-header("Location: ".LANDING_PAGE); exit;
+func_redirect(PAGE_LANDING);
 
 
 ?>
@@ -23,7 +24,7 @@ header("Location: ".LANDING_PAGE); exit;
 
 <div class='container-lg text-center'>
 <h1>Index</h1>
- <p>If redirect fails, visit our landing page here: <?php echo " <a href='".LANDING_PAGE."'>Landing Page</a>" ?>
+ <p>If redirect fails, visit our landing page here: <?php echo " <a href='".PAGE_LANDING."'>Landing Page</a>" ?>
      .</p>
 
 </div>
