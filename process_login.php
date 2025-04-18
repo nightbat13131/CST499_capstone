@@ -3,8 +3,6 @@ include_once "config.php";
 include_once "utilities.php";
 include_once "UserEntity.php";
 
-# [USER_USERNAME => 'RoraBora', USER_PASSWORD_PLAINTEXT => 'RoraBora1234'];
-
 $login_attempt = UserEntity::process_login($_POST);
 if (IS_DEBUG) {echo "process_login Login_attempt: "; nl_dump($login_attempt);}
 if ($login_attempt[0] == 1) { # successful login
@@ -23,8 +21,7 @@ if ($login_attempt[0] == 1) { # successful login
         setcookie(COOKIE_USERIDETITY, $serialized_user, 0, '/', null, false, true);
         func_redirect(PAGE_USER_ACCOUNT, "login successful", 'success');
     }
-} else {
-    func_redirect(PAGE_LOGIN, "login unsuccessful, $login_attempt[1]");
-}
+} else { func_redirect(PAGE_LOGIN, "login unsuccessful, $login_attempt[1]");}
 
 func_redirect(PAGE_LOGIN, "login failed - unknown error", 'error');
+

@@ -22,14 +22,12 @@ if (!isset($user)) {$user = UserEntity::get_default_user();}
 <body>
 <div class='container-lg text-center'>
 
-
     <?php
     if ($user->has_role(USERENTITY_STUDENT)) {
         $request = OfferedCourses::get_offered_courses();
-        # if (IS_DEBUG) {echo "results of attempt to OfferedCourses::get_offered_courses(): "; nl_dump($request);}
         if ( $request[0] ) {
+            if (true) {
             $offered_courses = $request[2];
-            # nl_dump($offered_courses);
             $used_offered_course = [];
             $used_course =[];
             $course_options = '';
@@ -48,26 +46,17 @@ if (!isset($user)) {$user = UserEntity::get_default_user();}
                 }
             } else {echo "<p>Get current courses failed. You may see duplicate offerings.</p>";}
 
-            #nl_dump($used_offered_course);
             $used_course = join(" ", $used_course);
-            #nl_dump($used_course);
             foreach ($offered_courses as $offered_row) {
-                #nl_dump($offered_row);
-                #nl_dump(OFFERED_OFFERED_COURSE_ID);
                 $offered_code = $offered_row[COURSE_OFFERED_ID];
                 $offered_class = substr($offered_code, 5, 6 );
-                #nl_dump($offered_class);
                 if (str_contains($used_course, $offered_class) or in_array($offered_code, $used_offered_course)) {
-                    # echo "<p>already enrolled in $offered_class</p>";
                     continue;
                 } else { $course_options .= "<option>$offered_code</option>";
-                    # array_push($display_courses, $offered_code);
                 }
             }
-        # nl_dump($course_options);
 
             echo "
-            
                 <form method='post' action=".PROCESS_REQUEST_ENROLL.">
                     <fieldset>
                         <LEGEND>Request Course Enrollment</LEGEND>
@@ -89,8 +78,8 @@ if (!isset($user)) {$user = UserEntity::get_default_user();}
                             </div>
                         </div>
                     </fieldset>
-                </form>
-                
+                </form> "; }
+                echo "  
                 <form method='post' action=".PROCESS_REQUEST_ENROLL."> 
                     <fieldset>
                         <LEGEND>Request Course Enrollment</LEGEND>
@@ -113,17 +102,12 @@ if (!isset($user)) {$user = UserEntity::get_default_user();}
                         </div>
                     </fieldset>
                 </form>
-            
        ";
-
         } else {echo "<p>Unable to load available courses. Please try again later.</p>";}
     } else {
         echo "<p>Students, sign in to your account to enroll in classes.</p>";
     }
     ?>
-
-
-
 
 
 </div>

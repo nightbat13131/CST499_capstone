@@ -15,11 +15,10 @@ if (isset($_COOKIE[COOKIE_USERIDETITY]) ) {
     $user = UserEntity::get_default_user();
 }
 
-
 if (!$user->has_role(USERENTITY_STUDENT)) {func_redirect( PAGE_USER_ACCOUNT, "Invalid User. Try signing out and back in.");}
 
-# $request = $user->drop_class($_POST);
-$request = $user->drop_class($_GET);
+$request = $user->drop_class($_POST);
+#$request = $user->drop_class($_GET);
 
 if (IS_DEBUG) {echo "user->drop attempt :", nl_dump($request);}
 $level = 'warning';

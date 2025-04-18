@@ -28,7 +28,7 @@ if ($results[0]) {
     }
 
             echo "
-            <form method='get' action=".PROCESS_DROP_CLASS.">
+            <form method='post' action=".PROCESS_DROP_CLASS.">
                 <fieldset>
                     <LEGEND>Drop Course</LEGEND>
                     <div class='form row'>

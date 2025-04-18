@@ -89,6 +89,7 @@ class UserEntity
         }
         return [1, "Dropping ".$inputs[COURSE_OFFERED_ID]." successful "];
     }
+
     public static function process_new_registration(array $input): array {
         if (IS_DEBUG) {echo '<class UserEntity-process_new_registration: '; ln_dump($input);}
         // Validate that data is usable

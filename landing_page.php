@@ -19,9 +19,7 @@ if (!isset($user)) {$user = UserEntity::get_default_user();}
 </head>
 <body>
 
-
 <div class='container-lg text-center'>
-
     <h1>Landing</h1>
     <p>Just talking about University Registration</p>
 </div>

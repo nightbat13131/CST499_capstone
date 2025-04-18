@@ -63,7 +63,8 @@ private ?PDOStatement $_last_prepared = null;
     }
     public function add_entry(string $table, array $params) : array {
         if (IS_DEBUG) {echo "DatabaseUtility::add_entry table: $table, params: "; nl_dump($params);}
-        $statement = "INSERT INTO $table  ( ".join(', ', array_keys($params))." ) VALUES ( :".join(', :', array_keys($params))." )";
+        $statement = "INSERT INTO $table  ( ".join(', ', array_keys($params))." ) VALUES ( :".join(', :',
+                array_keys($params))." )";
         if (IS_DEBUG) { nl_dump($statement);}
         $results = $this->prepare($statement);
         if ($results[0]) {

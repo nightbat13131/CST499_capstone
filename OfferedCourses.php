@@ -47,9 +47,7 @@ class OfferedCourses
     public static function request_enrollment(string $user_id, string $offered_course_id ) : array {
         if (IS_DEBUG) {echo "OfferedCoures::request_enrollment"; nl_dump([$user_id, $offered_course_id]);}
         # database uses foreign key, so at this time, validating $offerd_course is a real value is not needed
-
         $sql = self::get_sql();
-
         # get current count and limit
         $request = $sql->prepare(
             "SELECT suggested_enrol_limit FROM ".TABLE_COURSES." WHERE ".COURSE_ID." = :".COURSE_ID
@@ -82,7 +80,6 @@ class OfferedCourses
         }
         $request = $sql->add_entry($target_table, [USER_USERID=>$user_id, COURSE_OFFERED_ID=>$offered_course_id]);
         if (!$request[0]) {return $request;}
-
         return [1, "Successfully $mode in $offered_course_id."];
 }
 

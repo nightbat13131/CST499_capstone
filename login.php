@@ -1,15 +1,8 @@
-﻿<?php
-error_reporting(E_ALL ^ E_NOTICE);
+﻿<?php error_reporting(E_ALL ^ E_NOTICE);
 require_once "config.php";
-
-require_once "page_header.php";
-// $user defined in page_header
-if (!isset($user)) {$user = UserEntity::get_default_user();}
-
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
+require_once "page_header.php"; // $user defined in page_header
+if (!isset($user)) {$user = UserEntity::get_default_user();} ?>
+<!DOCTYPE html> <html lang="en"> <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -19,10 +12,7 @@ if (!isset($user)) {$user = UserEntity::get_default_user();}
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
 </head>
 <body>
-
-
 <div class='container-lg text-center'>
-
     <h1>Login</h1>
     <?php echo '
     <form method="post" action="'.PROCESS_LOGIN.'">
@@ -43,15 +33,11 @@ if (!isset($user)) {$user = UserEntity::get_default_user();}
                 <div class="col text-start">
                     <input type="password" name="'.USER_PASSWORD_PLAINTEXT.'" id="'.USER_PASSWORD_PLAINTEXT.'"/>
                 </div>
-
             </div>
             <input type="submit" />
         </fieldset>
-    </form>
-' ?>
-
+    </form>' ?>
 <?php include_once "page_footer.php";?>
-
 </body>
 
 

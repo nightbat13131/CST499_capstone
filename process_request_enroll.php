@@ -15,8 +15,8 @@ if (isset($_COOKIE[COOKIE_USERIDETITY]) ) {
     $user = UserEntity::get_default_user();
 }
 
-
-if (!$user->has_role(USERENTITY_STUDENT)) {func_redirect( PAGE_CLASS_ENROLLMENT, "Invalid User. Try signing out and back in.");}
+if (!$user->has_role(USERENTITY_STUDENT)) {func_redirect( PAGE_CLASS_ENROLLMENT,
+    "Invalid User. Try signing out and back in.");}
 
 $request = $user->request_enrollment($_POST);
 if (IS_DEBUG) {echo "user->request_enrollment attempt :", nl_dump($request);}
